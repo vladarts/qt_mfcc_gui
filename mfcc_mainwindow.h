@@ -4,23 +4,17 @@
 // Base QT-classes
 
 #include <QString>
-#include <QtWidgets/QWidget>
-#include <QtWidgets/QFileDialog>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QPushButton>
-#include <QtWidgets/QTextBrowser>
-#include <QtWidgets/QHBoxLayout>
-#include <QtWidgets/QVBoxLayout>
-#include <QtCore/QTimer>
-#include <QtWidgets/QSpinBox>
-#include <QtWidgets/QLabel>
-#include <QtCore/QVector>
-
-
-// Audio out
-#include <QBuffer>
-#include <QtMultimedia/QAudioOutput>
-
+#include <QWidget>
+#include <QFileDialog>
+#include <QDialog>
+#include <QPushButton>
+#include <QTextBrowser>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QTimer>
+#include <QSpinBox>
+#include <QLabel>
+#include <QVector>
 
 // My classes
 #include "vmfcc.h"
