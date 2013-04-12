@@ -74,7 +74,7 @@ private:
 
 	long int filePos;
 
-	QBuffer *audioBuffer;
+//	QBuffer *audioBuffer;
 
 	QElapsedTimer *timer;
 	

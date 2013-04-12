@@ -1,5 +1,5 @@
 #include "vmfcc.h"
-
+#include <cstring>
 
 VMFCC::VMFCC()
 {

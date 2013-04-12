@@ -12,10 +12,9 @@ vWAV::~vWAV(void)
 
 bool vWAV::Open( char* Path )
 {
-	if (fopen_s(&file, Path, "rb") != 0)
-		return false;
+    file = fopen(Path, "rb");
 	header = (WAVHEADER *)malloc(sizeof(WAVHEADER));
-	fread_s(header, sizeof(WAVHEADER), sizeof(WAVHEADER), 1, file);
+    fread(header, sizeof(WAVHEADER), 1, file);
 	if (header->format[1] != FORMAT_WAV[1] && header->format[2] != FORMAT_WAV[2] && header->format[3] != FORMAT_WAV[3] && header->format[4] != FORMAT_WAV[4])
 	{
 		this->CloseFile();

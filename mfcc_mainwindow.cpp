@@ -66,11 +66,18 @@ MFCC_MainWindow::MFCC_MainWindow( QWidget *parent) : QDialog(parent)
 
 	setLayout(mainLayout);
 
-	connect(openButton, &QPushButton::clicked, this, &MFCC_MainWindow::openFile);
-	connect(closeButton, &QPushButton::clicked, this, &MFCC_MainWindow::closeFile);
-	connect(startAnalyseButton, &QPushButton::clicked, this, &MFCC_MainWindow::startAnalyse);
-	connect(stopAnalyseButton, &QPushButton::clicked, this, &MFCC_MainWindow::stopAnalyse);
-	connect(updateTimer, &QTimer::timeout, this, &MFCC_MainWindow::analyse);
+//	connect(openButton, &QPushButton::clicked, this, &MFCC_MainWindow::openFile);
+//	connect(closeButton, &QPushButton::clicked, this, &MFCC_MainWindow::closeFile);
+//	connect(startAnalyseButton, &QPushButton::clicked, this, &MFCC_MainWindow::startAnalyse);
+//	connect(stopAnalyseButton, &QPushButton::clicked, this, &MFCC_MainWindow::stopAnalyse);
+//	connect(updateTimer, &QTimer::timeout, this, &MFCC_MainWindow::analyse);
+
+
+    connect(openButton, SIGNAL(clicked()), this, SLOT(openFile()));
+    connect(closeButton, SIGNAL(clicked()), this, SLOT(closeFile()));
+    connect(startAnalyseButton, SIGNAL(clicked()), this, SLOT(startAnalyse()));
+    connect(stopAnalyseButton, SIGNAL(clicked()), this, SLOT(stopAnalyse()));
+    connect(updateTimer, SIGNAL(timeout()), this, SLOT(analyse()));
 	connect(countOfMfccSpin, SIGNAL(valueChanged(int)), this, SLOT(changePlotX(int)));
 
 	// Plot config

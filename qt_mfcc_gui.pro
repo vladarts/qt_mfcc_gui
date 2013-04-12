@@ -17,20 +17,20 @@ SOURCES += \
     mfcc_mainwindow.cpp \
     main.cpp \
     vWAV.cpp \
-    vmfcc.cpp \
-    qt_vmfcc.cpp
+    vmfcc.cpp
 
 HEADERS  += \
     qcustomplot.h \
     mfcc_mainwindow.h \
     vWAV.h \
     vmfcc.h \
-    qt_vmfcc.h \
     fftw3.h
 
 OTHER_FILES += \
     README.md
 
 FORMS +=
+
+LIBS += /usr/local/lib/libfftw3.a
 
 RESOURCES +=

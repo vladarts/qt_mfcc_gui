@@ -2,13 +2,13 @@
 
 
 
-#include <QtWidgets/QApplication>
-#include <QtWidgets/QDialog>
-#include <QtWidgets/QTextEdit>
-#include <QtWidgets/QHBoxLayout>
+#include <QApplication>
+#include <QDialog>
+#include <QTextEdit>
+#include <QHBoxLayout>
 #include <QString>
-#include <QtMultimedia/QSound>
-#include <QtMultimedia/QSoundEffect>
+//#include <QQSound>
+//#include <QQSoundEffect>
 
 #include "vWAV.h"
 #include "vmfcc.h"
