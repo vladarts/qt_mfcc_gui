@@ -1,4 +1,5 @@
 #pragma once
+#include <QtGui/QApplication>
 #include <stdlib.h>
 #include <stdio.h>
 #include <memory.h>
@@ -16,7 +17,7 @@ struct WAVHEADER
     // Это оставшийся размер цепочки, начиная с этой позиции.
     // Иначе говоря, это размер файла - 8, то есть,
     // исключены поля chunkId и chunkSize.
-    unsigned long chunkSize;
+    qint32 chunkSize;
 
     // Содержит символы "WAVE"
     // (0x57415645 в big-endian представлении)
@@ -31,28 +32,28 @@ struct WAVHEADER
 
     // 16 для формата PCM.
     // Это оставшийся размер подцепочки, начиная с этой позиции.
-    unsigned long subchunk1Size;
+    qint32 subchunk1Size;
 
     // Аудио формат, полный список можно получить здесь http://audiocoding.ru/wav_formats.txt
     // Для PCM = 1 (то есть, Линейное квантование).
     // Значения, отличающиеся от 1, обозначают некоторый формат сжатия.
-    unsigned short audioFormat;
+    qint16 audioFormat;
 
     // Количество каналов. Моно = 1, Стерео = 2 и т.д.
-    unsigned short numChannels;
+    qint16 numChannels;
 
     // Частота дискретизации. 8000 Гц, 44100 Гц и т.д.
-    unsigned long sampleRate;
+    qint32 sampleRate;
 
     // sampleRate * numChannels * bitsPerSample/8
-    unsigned long byteRate;
+    qint32 byteRate;
 
     // numChannels * bitsPerSample/8
     // Количество байт для одного сэмпла, включая все каналы.
-    unsigned short blockAlign;
+    qint16 blockAlign;
 
     // Так называемая "глубиная" или точность звучания. 8 бит, 16 бит и т.д.
-    unsigned short bitsPerSample;
+    qint16 bitsPerSample;
 
     // Подцепочка "data" содержит аудио-данные и их размер.
 
@@ -62,7 +63,7 @@ struct WAVHEADER
 
     // numSamples * numChannels * bitsPerSample/8
     // Количество байт в области данных.
-    unsigned long subchunk2Size;
+    qint32 subchunk2Size;
 
     // Далее следуют непосредственно Wav данные.
 };

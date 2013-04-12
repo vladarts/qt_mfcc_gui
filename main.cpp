@@ -1,6 +1,5 @@
-#include "qt_vmfcc.h"
-
-
+#include <Qt>
+#include <QtGui/QApplication>
 
 #include <QApplication>
 #include <QDialog>
@@ -26,7 +25,6 @@ using namespace std;
 int main(int argc, char *argv[])
 {
 	QApplication a(argc, argv);
-	
 	
 	
 	MFCC_MainWindow MainWindow;
